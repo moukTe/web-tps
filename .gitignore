@@ -1,0 +1,6 @@
+# Ignore OS files
+.DS_Store
+
+# Ignore temporary or swap files
+*.swp
+*.save

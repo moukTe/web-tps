@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>To-Do List</title>
+    <style>
+    body {
+        margin: 8px;
+        font-family: Arial, sans-serif;
+        background: #ffffff;
+        display: flex;
+        justify-content: center;
+        padding: 40px;
+    }
+    .container {
+        width: 400px;
+        background: rgb(182, 180, 180);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    h1 { text-align: center; }
+    .input-group {
+        display: flex;
+        gap: 10px;
+    }
+    input {
+        flex: 1;
+        padding: 8px;
+        border: 1px solid #c3baba;
+        border-radius: 5px;
+    }
+    button {
+        padding: 12px 12px;
+        border: none;
+        border-radius: 5px;
+        background: #830707;
+        color: white;
+        cursor: pointer;
+    }
+    button:hover { background: #0a8710; }
+    ul { list-style: none; padding: 0; margin-top: 20px; }
+    li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px;
+        margin-bottom: 8px;
+        background: #f0f0f0;
+        border-radius: 5px;
+    }
+    li.completed span {
+        text-decoration: line-through;
+        color: gray;
+    }
+    .actions button {
+        margin-left: 5px;
+        background: #e74c3c;
+    }
+    .actions button.done {
+        background: #2ecc71;
+    }
+    #counter {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #555;
+        text-align: center;
+    }
+    .stats {
+        margin-top: 15px;
+        font-size: 14px;
+        color: #555;
+        text-align: center;
+    }
+    #clearAll{
+        margin-top: 8px;
+    }
+    </style>
+</head>
+<body>
+    <div class="container">
+    <h1>To-Do Tasks</h1>
+    <div class="input-group">
+        <input type="text" id="taskInput" placeholder="Nouvelle tâche...">
+        <button id="addBtn">Ajouter</button>
+    </div>
+    <input type="text" id="searchInput" placeholder="Rechercher..." style="margin-top:10px;width:100%;padding:8px;">
+    <ul id="taskList"></ul>
+    <div class="stats">
+        <span id="counter"></span>
+        <br>
+        <button id="clearAll">Tout supprimer</button>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
