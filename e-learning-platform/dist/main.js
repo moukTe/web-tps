@@ -1,0 +1,18 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const repositories_1 = require("./repositories");
+const courses_1 = require("./courses");
+const courses_2 = require("./courses");
+const fetcher_1 = require("./fetcher");
+const melek = { id: 1, name: 'melek', role: 'student' };
+const mbh = { id: 1, name: 'mbh', role: 'teacher' };
+const userRepo = new repositories_1.UserRepository;
+userRepo.add(melek);
+userRepo.add(mbh);
+const VC1 = new courses_1.VideoCourse('vidC1', 60);
+const LC = new courses_2.LiveCourse('LC1', new Date(Date.now() + 1000 * 60 * 60 * 24));
+console.log(VC1.getDescription());
+console.log(LC.getDescription());
+console.log("Users in repository:", userRepo.getAll());
+console.log((0, fetcher_1.fetchUser)(1));
+console.log((0, fetcher_1.fetchUser)(42));

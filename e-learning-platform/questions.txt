@@ -1,0 +1,37 @@
+2. Différence entre interface et type
+
+interface : utilisée pour décrire la forme d’un objet, facilement extensible et implémentable par les classes. Exemple : User, Repository<T>.
+
+type : utilisé pour des unions ou pour combiner plusieurs types. Exemple : type Role = 'student' | 'teacher' | 'admin', type ApiResponse<T>.
+
+3. Pourquoi Course doit être abstraite ?
+
+Parce qu’on ne veut pas créer directement une instance de Course. C’est une classe générique qui sert de base à VideoCourse et LiveCourse. En la rendant abstraite, on oblige les sous-classes à implémenter la méthode getDescription() et on évite des objets incomplets.
+
+4. Différence entre export nommé et export par défaut
+
+Export nommé :
+
+export class UserRepository {}
+import { UserRepository } from './repositories';
+
+Export par défaut :
+
+export default UserRepository;
+import UserRepository from './repositories';
+
+Dans ce projet, j'ai utilisé des exports nommés, car ils rendent les imports explicites et favorisent la lisibilité.
+
+5. Amélioration possible
+
+Créer un CourseRepository<T extends Course> pour gérer plusieurs types de cours de manière générique :
+
+export class CourseRepository<T extends Course> implements Repository<T> {
+  private items: T[] = [];
+  add(item: T): void { this.items.push(item); }
+  remove(id: number): void {
+    this.items = this.items.filter((_, i) => i !== id);
+  }
+  getAll(): T[] { return [...this.items]; }
+}
+
