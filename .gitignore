@@ -4,3 +4,27 @@
 # Ignore temporary or swap files
 *.swp
 *.save
+# Node modules (all projects)
+node_modules/
+
+# Angular build output (all projects)
+dist/
+out-tsc/
+
+# Angular CLI files
+.angular/
+
+# IDE/editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
