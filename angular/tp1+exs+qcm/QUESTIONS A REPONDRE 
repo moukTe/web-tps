@@ -1,0 +1,91 @@
+Le dossier src/ contient : 3 fichiers : index.html, main.ts, styles.css , 1 dossier nomme app qui contient a son tour 6 fichiers : app.config.ts, app.css, app.html, app.routes.ts, app.spec.ts, app.ts.
+Le dossier node_modules/ contient : Angular packages, helper functions, packages ... des dependances installees par npm pour le projet.
+
+Le fichier angular.json contient : La configuration du workspace Angular et des projets cad les instructions que la CLI utilise pour construire/servir/tester les apps.
+
+Le fichier package.json : les information tel que le nom,version,license , les dependances et les commandes du projet.
+
+Le fichier package-lock.json Fournit : un enregistrement verrouille des versions exactes des paquets installes. Il garantit que npm install sur deux machines différentes installe exactement les memes versions.
+
+Le fichier tsconfig.json contient : la configuration du compilateur TypeScript pour le projet. il controle comment TypeScript est transpile en JavaScript.
+
+Partie 1 : QCM sur les outils de développement Angular
+
+Quelle est la principale fonction de Node.js dans le développement Angular ?
+Réponse : a) Un environnement d'exécution pour le code JavaScript côté serveur.
+
+Quelle commande permet d’installer Angular CLI globalement ?
+Réponse : c) npm install -g @angular/cli
+
+Éditeur recommandé pour Angular :
+Réponse : b) Visual Studio Code
+
+Fichier contenant les dépendances :
+Réponse : b) package.json
+
+Commande pour créer un projet Angular nommé "ma-app" :
+Réponse : c) ng new ma-app
+
+Rôle de ng serve :
+Réponse : b) Lancer un serveur de développement et recharger automatiquement l’application lors des modifications.
+
+Partie 2 : QCM sur la création d’un projet Angular
+
+Répertoire contenant les fichiers sources :
+Réponse : a) src/
+
+Fichier définissant modules, composants, services :
+Réponse : b) app.module.ts
+
+Rôle de angular.json :
+Réponse : b) Définir les configurations de compilation, les entrées et sorties du projet.
+
+Commande pour générer un composant nommé header :
+Réponse : c) ng generate component header
+
+Rôle du fichier tsconfig.json :
+Réponse : a) Configurer le compilateur TypeScript pour le projet.
+
+Partie 3 : Exploration de l’univers Angular
+
+
+Angular
+Caractéristiques :
+Framework complet (full-stack front-end)
+Basé sur TypeScript
+Utilise le concept de composants et services
+Gestion intégrée des formulaires, routage, HTTP
+Avantages :
+Solution complète et cohérente
+Très utilisé en entreprise
+Fort typage grâce à TypeScript
+Inconvénients :
+Courbe d’apprentissage élevée
+Plus lourd que React ou Vue
+
+React
+Caractéristiques :
+Bibliothèque front-end (pas un framework complet)
+Basé sur JavaScript/JSX
+Focus sur les composants UI
+Avantages :
+Léger, flexible
+Large communauté
+Écosystème riche
+Inconvénients :
+Nécessite d’assembler des bibliothèques pour routage, état global
+Peut devenir complexe dans de gros projets
+
+Vue.js
+Caractéristiques :
+Framework progressif
+Basé sur JavaScript
+Facile à intégrer dans des projets existants
+Avantages :
+Simple à apprendre
+Flexible et léger
+Documentation claire
+Inconvénients :
+Moins d’opportunités en entreprise comparé à Angular et React
+Certaines limitations dans les très grands projets
+Conclusion : Angular est idéal pour les projets d’entreprise complets. React est flexible et populaire pour des applications dynamiques. Vue.js est léger et rapide à apprendre.
