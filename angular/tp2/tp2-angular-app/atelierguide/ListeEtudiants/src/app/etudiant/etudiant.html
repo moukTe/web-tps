@@ -1,0 +1,58 @@
+<div class="etudiant-container">
+<div class="etudiant-container">
+<h2>{{ etudiant.name }}</h2>
+
+<div><strong>id: </strong>{{ etudiant.id }}</div>
+
+<div>
+<label>
+    <strong>name: </strong>
+    <input [(ngModel)]="etudiant.name" placeholder="name"/>
+</label>
+</div>
+</div>
+<h2>Informations de l'étudiant : {{ etudiant.name | uppercase }} {{ etudiant.lastname | titlecase }}</h2>
+
+<table>
+<thead>
+    <tr>
+    <th>Champ</th>
+    <th>Valeur</th>
+    </tr>
+</thead>
+<tbody>
+    <tr>
+    <td><strong>Id</strong></td>
+    <td>{{ etudiant.id }}</td>
+    </tr>
+    <tr>
+    <td><strong>Prénom</strong></td>
+    <td>{{ etudiant.name }}</td>
+    </tr>
+    <tr>
+    <td><strong>Nom de famille</strong></td>
+    <td>{{ etudiant.lastname | uppercase }}</td>
+    </tr>
+    <tr>
+    <td><strong>Moyenne</strong></td>
+    <td>{{ etudiant.average | number:'1.2-2' }}</td>
+    </tr>
+    <tr>
+    <td><strong>Taux de réussite</strong></td>
+    <td>{{ etudiant.successRate | percent }}</td>
+    </tr>
+    <tr>
+    <td><strong>Bourse mensuelle</strong></td>
+    <td>{{ etudiant.scholarship | currency:'TND':'symbol':'1.2-2' }}</td>
+    </tr>
+    <tr>
+    <td><strong>Date de naissance</strong></td>
+    <td>{{ etudiant.birthdate | date:'dd/MM/yyyy' }}</td>
+    </tr>
+    <tr>
+    <td><strong>Classe</strong></td>
+    <td>{{ etudiant.classe }}</td>
+    </tr>
+</tbody>
+</table>
+</div>
