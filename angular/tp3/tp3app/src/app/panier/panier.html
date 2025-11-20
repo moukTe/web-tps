@@ -1,0 +1,5 @@
+<h3>Panier</h3>
+<ul>
+  <li *ngFor="let item of items">{{ item }}</li>
+</ul>
+<p *ngIf="items.length === 0">Le panier est vide.</p>
