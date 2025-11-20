@@ -1,0 +1,113 @@
+.game-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 16px;
+  box-shadow: 
+    0 4px 20px rgba(0,0,0,0.08),
+    inset 0 1px 0 rgba(255,255,255,0.8);
+}
+
+.game-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.question-list {
+  margin-top: 1.5rem;
+}
+
+.question-card {
+  background: white;
+  padding: 1.5rem;
+  margin-bottom: 1.2rem;
+  border-radius: 12px;
+  border-left: 4px solid #667eea;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  transition: transform 0.2s ease;
+}
+
+.question-card:hover {
+  transform: translateY(-2px);
+}
+
+.question-card h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.1rem;
+  color: #2d3748;
+}
+
+.options {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.options button {
+  padding: 0.8rem 1rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  background: white;
+  color: #4a5568;
+  transition: all 0.2s ease;
+  text-align: left;
+}
+
+.options button:hover {
+  border-color: #667eea;
+  background: #f7fafc;
+  transform: translateX(4px);
+}
+
+.options button.selected {
+  border-color: #667eea;
+  background: #667eea;
+  color: white;
+}
+
+.options button.correct {
+  border-color: #48bb78;
+  background: #48bb78;
+  color: white;
+}
+
+.options button.wrong {
+  border-color: #f56565;
+  background: #f56565;
+  color: white;
+}
+
+.answer-input {
+  width: 100%;
+  padding: 0.8rem;
+  margin-top: 0.5rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.answer-input:focus {
+  border-color: #667eea;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.timer {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  background: linear-gradient(135deg, #ffd89b 0%, #19547b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
