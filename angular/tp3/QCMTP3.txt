@@ -1,0 +1,6 @@
+QCM 1 : b) {{ value }}
+QCM 2 : b) <img [src]="imageUrl" alt="Image">
+QCM 3 : b) <button (click)="maMethode()">Cliquez-moi</button>
+QCM 4 : b) <input [(ngModel)]="nom">
+QCM 5 : c) FormsModule
+QCM 6 : b) Ils sont utilisés pour transformer et formater les données directement dans le template.
