@@ -1,0 +1,10 @@
+1️1- C – *ngIf affiche/cache selon une condition.
+2️2- B – *ngFor sert à parcourir une liste.
+3️3- B – *ngIf rend l’affichage dynamique selon les données.
+4️4- B – [ngClass] applique des classes selon des conditions.
+5️5- C – [ngStyle] sert à modifier des styles précis.
+6️6- B – *ngIf + *ngFor = afficher une liste seulement si condition.
+7️7- B – Ces directives rendent l’app plus réactive.
+8️8- C – [ngClass] pour appliquer une classe si condition.
+9️9- D – [ngStyle] pour changer des propriétés CSS dynamiquement.
+10- B – Combiner *ngIf + *ngFor + [ngClass] + [ngStyle] pour une app complète.

@@ -1,0 +1,19 @@
+<h3>Gestion des tâches</h3>
+
+<div *ngIf="taches.length > 0; else pasDeTaches">
+  <div *ngFor="let tache of taches"
+       [ngClass]="{ 'barree': tache.completee }"
+       [ngStyle]="{
+         'color': tache.priorite === 'haute' ? 'red' :
+                  (tache.priorite === 'moyenne' ? 'orange' : 'green')
+       }">
+    {{ tache.description }}
+    <button (click)="toggleTache(tache)">
+      {{ tache.completee ? 'Annuler' : 'Compléter' }}
+    </button>
+  </div>
+</div>
+
+<ng-template #pasDeTaches>
+  <p>Vous n'avez pas de tâches en cours.</p>
+</ng-template>

@@ -1,0 +1,74 @@
+h3 {
+  color: #6c5ce7;
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-align: center;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+h3::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #6c5ce7, #a29bfe);
+  border-radius: 2px;
+}
+
+div {
+  margin-bottom: 15px;
+  padding: 15px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #6c5ce7;
+  transition: all 0.3s ease;
+}
+
+div:hover {
+  transform: translateX(5px);
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(108, 92, 231, 0.1);
+}
+
+p {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2d3436;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+p::before {
+  content: "▸";
+  color: #6c5ce7;
+  font-weight: bold;
+}
+
+button {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(108, 92, 231, 0.3);
+}
+
+button:hover {
+  background: linear-gradient(135deg, #5b4cd8, #8c7bf5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(108, 92, 231, 0.4);
+}
+
+button:active {
+  transform: translateY(0);
+}

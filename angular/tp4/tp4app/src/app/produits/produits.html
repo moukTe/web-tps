@@ -1,0 +1,10 @@
+<h3>Liste des produits</h3>
+<div *ngFor="let produit of produits">
+  <p [ngStyle]="{
+        'color': produit.stock > 50 ? 'green' : 
+                 (produit.stock >= 20 ? 'orange' : 'red')
+      }">
+    {{ produit.nom }} — Stock : {{ produit.stock }}
+  </p>
+  <button (click)="augmenterStock(produit)">+5 stock</button>
+</div>

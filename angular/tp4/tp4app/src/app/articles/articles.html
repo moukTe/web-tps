@@ -1,0 +1,22 @@
+<div>
+  <h3>Liste des articles</h3>
+
+  <div *ngFor="let article of articles" class="article">
+    <h4>{{ article.titre }}</h4>
+    <p>{{ article.contenu }}</p>
+  </div>
+
+  <input [(ngModel)]="nouveauTitre" placeholder="Titre">
+  <input [(ngModel)]="nouveauContenu" placeholder="Contenu">
+  <button (click)="ajouterArticle()">Ajouter</button>
+</div>
+
+<div *ngFor="let article of articles2" 
+     [ngClass]="{
+       'important': article.importance === 'élevée',
+       'moyen': article.importance === 'moyenne',
+       'faible': article.importance === 'faible'
+     }">
+  <h4>{{ article.titre }}</h4>
+  <p>{{ article.contenu }}</p>
+</div>
