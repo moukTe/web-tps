@@ -1,0 +1,31 @@
+<h1>Gestion des Livres</h1>
+
+<div>
+  <app-book-form
+    [categories]="categories"
+    [bookToEdit]="selectedBook"
+    (createBook)="addBook($event)"
+    (updateBook)="updateBook($event)">
+  </app-book-form>
+</div>
+
+<div>
+  <input type="text"
+         [(ngModel)]="search"
+         placeholder="Rechercher un livre..."
+         class="search-input">
+
+  <select [(ngModel)]="filterOption">
+    <option value="">Tous</option>
+    <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+    <option value="available">Disponibles</option>
+  </select>
+
+  <app-book-list
+    [books]="sortedBooks"
+    (delete)="deleteBook($event)"
+    (edit)="editBook($event)">
+  </app-book-list>
+</div>
+
+<p>Total : {{ books.length }} livres</p>

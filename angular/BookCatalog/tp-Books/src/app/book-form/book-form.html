@@ -1,0 +1,108 @@
+<form #bookForm="ngForm" (ngSubmit)="onSubmit(bookForm)"> 
+
+    <div>
+        <input type="text" id="title" name="title"
+               [(ngModel)]="book.title"
+               required minlength="3"
+               pattern=".*[a-zA-Z].*"
+               #titleCtrl="ngModel"
+               placeholder="title">
+
+        <div *ngIf="titleCtrl.invalid && titleCtrl.dirty">
+            <small *ngIf="titleCtrl.errors?.['required']">Le titre est obligatoire.</small>
+            <small *ngIf="titleCtrl.errors?.['minlength']">Minimum 3 caractères.</small>
+            <small *ngIf="titleCtrl.errors?.['pattern']">Le titre ne peut pas être uniquement des chiffres.</small>
+            <small *ngIf="titleCtrl.errors?.['pattern']">Le titre ne doit pas être uniquement numérique.</small>
+        </div>
+    </div>
+
+    <div>
+        <input type="text" id="author" name="author"
+               [(ngModel)]="book.author"
+               required minlength="3"
+               #authorCtrl="ngModel"
+               placeholder="author">
+
+        <div *ngIf="authorCtrl.invalid && authorCtrl.dirty">
+            <small *ngIf="authorCtrl.errors?.['required']">L’auteur est obligatoire.</small>
+            <small *ngIf="authorCtrl.errors?.['minlength']">Minimum 3 caractères.</small>
+        </div>
+    </div>
+
+    <div>
+        <input type="email" id="email" name="email"
+               [(ngModel)]="book.publisherEmail"
+               required
+               #emailCtrl="ngModel"
+               placeholder="email">
+
+        <div *ngIf="emailCtrl.invalid && emailCtrl.dirty">
+            <small *ngIf="emailCtrl.errors?.['required']">Email obligatoire.</small>
+            <small *ngIf="emailCtrl.errors?.['email']">Format email invalide.</small>
+        </div>
+    </div>
+
+    <div>
+        <input type="number" id="publisherPhone" name="publisherPhone"
+               [(ngModel)]="book.publisherPhone"
+               pattern="^[0-9]{8}$"
+               #phoneCtrl="ngModel"
+               placeholder="Phone Number">
+
+        <div *ngIf="phoneCtrl.invalid && phoneCtrl.dirty">
+            <small>Doit contenir exactement 8 chiffres.</small>
+        </div>
+    </div>
+
+    <div>
+        <input type="date" id="releaseDate" name="releaseDate"
+               [(ngModel)]="book.releaseDate"
+               required min="1900-01-01"
+               #dateCtrl="ngModel">
+
+        <div *ngIf="dateCtrl.invalid && dateCtrl.dirty">
+            <small *ngIf="dateCtrl.errors?.['required']">La date est obligatoire.</small>
+            <small *ngIf="dateCtrl.errors?.['min']">La date doit être ≥ 1900.</small>
+        </div>
+    </div>
+
+    <div>
+        <select id="category" name="category"
+                [(ngModel)]="book.category"
+                required
+                #catCtrl="ngModel">
+
+            <option value="">--Choisir--</option>
+            <option *ngFor="let c of categories" [value]="c">{{ c }}</option>
+        </select>
+
+        <div *ngIf="catCtrl.invalid && catCtrl.dirty">
+            <small>La catégorie est obligatoire.</small>
+        </div>
+    </div>
+
+    <div>
+        <input type="checkbox" id="isAvailable" name="isAvailable"
+               [(ngModel)]="book.isAvailable">
+        Disponible
+    </div>
+
+    <div>
+        <input type="number" id="stock" name="stock"
+               [(ngModel)]="book.stock"
+               min="0"
+               #stockCtrl="ngModel"
+               placeholder="Stock (optional)">
+
+        <div *ngIf="stockCtrl.invalid && stockCtrl.dirty">
+            <small>Le stock doit être ≥ 0.</small>
+        </div>
+    </div>
+
+    <div>
+        <button type="submit">
+            {{ bookToEdit ? 'Mettre à jour' : 'Ajouter' }}
+        </button>
+    </div>
+
+</form>
