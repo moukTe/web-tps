@@ -1,0 +1,145 @@
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.app-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.2) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.15) 0%, transparent 50%);
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-10px) rotate(1deg); }
+}
+
+.app-header {
+  text-align: center;
+  color: white;
+  padding: 50px 20px 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.app-header h1 {
+  margin: 0 0 20px 0;
+  font-size: 3rem;
+  font-weight: 800;
+  text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #ffffff 0%, #f0f0f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: -0.5px;
+  position: relative;
+  display: inline-block;
+}
+
+.app-header h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 25%;
+  width: 50%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ffffff, transparent);
+  border-radius: 2px;
+}
+
+.subtitle {
+  font-size: 1.3rem;
+  opacity: 0.95;
+  margin: 25px 0 0 0;
+  font-weight: 300;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  letter-spacing: 0.5px;
+  position: relative;
+  display: inline-block;
+  padding: 0 20px;
+}
+
+.subtitle::before,
+.subtitle::after {
+  content: '✦';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.7;
+  font-size: 0.8em;
+}
+
+.subtitle::before { left: 0; }
+.subtitle::after { right: 0; }
+
+.app-main {
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.app-footer {
+  text-align: center;
+  color: white;
+  padding: 40px 20px;
+  margin-top: 60px;
+  font-size: 1rem;
+  opacity: 0.9;
+  position: relative;
+  z-index: 1;
+}
+
+.app-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+}
+
+@media (max-width: 768px) {
+  .app-header h1 {
+    font-size: 2.3rem;
+  }
+
+  .subtitle {
+    font-size: 1.1rem;
+  }
+
+  .app-header {
+    padding: 40px 20px 30px;
+  }
+
+  .app-container::before {
+    animation-duration: 8s;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-header h1 {
+    font-size: 2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    padding: 0 15px;
+  }
+
+  .app-container {
+    padding: 15px;
+  }
+}
